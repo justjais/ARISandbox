@@ -1,0 +1,13 @@
+---
+- name: playbook example
+  gather_facts: false
+  become: false
+  hosts: all
+  tasks:
+    - name: install httpd and nginx
+      ansible.builtin.yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - httpd
+        - nginx
