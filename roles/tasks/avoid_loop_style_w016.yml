@@ -6,8 +6,7 @@
   tasks:
     - name: install httpd and nginx
       ansible.builtin.yum:
-        name: "{{ item }}"
+        name:
+          - httpd
+          - nginx
         state: present
-      with_items:
-        - httpd
-        - nginx
