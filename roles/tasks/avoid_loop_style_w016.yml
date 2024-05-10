@@ -5,9 +5,9 @@
   hosts: all
   tasks:
     - name: Install the latest version of Apache and MariaDB
-      package:
+      ansible.builtin.package:
         name: "{{ item }}"
         state: present
-      with_items:
+      loop:
         - httpd
         - mariadb-server
