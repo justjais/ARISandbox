@@ -6,7 +6,6 @@
   tasks:
     - name: Install python and go
       ansible.builtin.yum:
-        name: "{{ item }}"
-      with_items:
+        name:
         - python
         - go
