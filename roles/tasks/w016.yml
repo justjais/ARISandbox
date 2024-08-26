@@ -4,11 +4,10 @@
   gather_facts: false
   become: false
   hosts: all
-  tasks:
-    - name: Install httpd and nginx
-      ansible.builtin.yum:
+    - name: Install python and go
+      ansible.builtin.package:
         name: "{{ item }}"
-        state: present
       with_items:
-        - httpd
+        - python
+        - go
         - nginx
